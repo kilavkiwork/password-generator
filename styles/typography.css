@@ -1,12 +1,30 @@
-/* @font-face {
-  font-family: "Barlow Semi Condensed";
-  font-weight: normal;
-  font-weight: 400;
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/JetBrainsMono-Bold.woff2') format('woff2'),
+    url('../assets/fonts/JetBrainsMono-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
   font-display: swap;
-  src: url(../assets/fonts/BarlowSemiCondensed-Medium.woff2) format("woff2"),
-    url(../assets/fonts/BarlowSemiCondensed-Medium.woff) format("woff");
-} */
+}
 
-/* h1, h2, h3, h4, h5, h6 {
-  font-family: "Big Shoulders Display";
-} */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('JetBrainsMono-BoldItalic.woff2') format('woff2'),
+    url('JetBrainsMono-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+.title {
+  font-family: var(--main_font);
+  font-weight: bold;
+}
+h1.title {
+  font-size: 2rem;
+  line-height: 1.35;
+}
+h2.title {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
