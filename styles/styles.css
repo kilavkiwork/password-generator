@@ -13,7 +13,7 @@
   --font-size: 1.125rem;
   --padding: 20px;
   --container: 1170px;
-  --anime: 0.5s, ease;
+  --anime: 0.5s ease;
 }
 
 *,
@@ -143,3 +143,36 @@ button {
   transform: translate(-35%, -65%) rotate(45deg);
 }
 /* end inputs check */
+/* btn */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  width: 100%;
+  min-height: 65px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--dark_grey);
+  border: 2px solid var(--neon_green);
+  background-color: var(--neon_green);
+  transition: background-color var(--anime), color var(--anime);
+}
+.arrow {
+  width: 12px;
+  height: 12px;
+  fill: var(--dark_grey);
+  transition: fill var(--anime);
+}
+.btn:hover {
+  color: var(--neon_green);
+  background-color: transparent;
+}
+.btn:hover .arrow {
+  fill: var(--neon_green)
+}
+
+
+/* end btn */
