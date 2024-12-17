@@ -98,16 +98,48 @@ button {
   flex: 1 1 auto;
 }
 
-/* .container {
-  margin: 0 auto;
-  max-width: var(--container);
-  padding: 0 var(--padding);
-} */
-
 .container {
   margin: 0 auto;
   width: calc(100% - (var(--padding) * 2));
   max-width: var(--container);
-
+  /* temp style */
   border: 3px solid orange;
 }
+/* inputs check */
+.check_input {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 24px;
+}
+.check_input input {
+  display: none;
+}
+.checkmark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--white);
+  background-color: transparent;
+}
+.check_input input:checked + .checkmark {
+  background-color: var(--neon_green);
+  border-color: var(--neon_green);
+}
+.checkmark::after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+.check_input input:checked + .checkmark::after {
+  display: block;
+}
+.checkmark::after {
+  left: 50%;
+  top: 50%;
+  width: 35%;
+  height: 65%;
+  border: solid var(--black);
+  border-width: 0 3px 3px 0;
+  transform: translate(-35%, -65%) rotate(45deg);
+}
+/* end inputs check */
