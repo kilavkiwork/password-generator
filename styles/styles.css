@@ -1,9 +1,14 @@
 :root {
-  --primary_color: #733fc8;
-  --secondary_color: #48556a;
-  --white: #fff;
-  --black: #000;
-  --body-bg: #f3f3f3;
+  --yellow: #f8cd65;
+  --orange: #fb7c58;
+  --red: #f64a4a;
+  --neon_green: #a4ffaf;
+  --grey: #817d92;
+  --dark_grey: #24232c;
+  --white: #e6e5ea;
+  --black: #18171f;
+  --body-bg: var(--black);
+
   --main_font: 'Lexend Deca';
   --secondary_font: 'Big Shoulders Display';
   --font-size: 16px;
@@ -107,4 +112,3 @@ button {
 
   border: 3px solid orange;
 }
-
