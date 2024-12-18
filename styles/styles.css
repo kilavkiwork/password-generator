@@ -184,11 +184,17 @@ button {
   justify-content: center;
   gap: 1rem;
 }
+.password-size:not(:last-child) {
+  margin-bottom: 32px;
+}
 .password-size__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 43px;
+}
+.password-size__header:not(:last-child) {
+  margin-bottom: 16px;
 }
 .password-size__header label {
   font-style: normal;
@@ -202,6 +208,33 @@ button {
   line-height: 42px;
   color: var(--neon_green);
 }
+.range-wrap {
+  height: 28px;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    var(--neon_green) 50%,
+    var(--black) 50%
+  );
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+input[type='range']:active::-webkit-slider-thumb {
+  border-color: var(--neon_green);
+  background-color: var(--black);
+}
 /* end range */
 
 section.hero {
@@ -213,11 +246,4 @@ section.hero {
 .tools-box {
   padding: 24px 32px 32px;
   background-color: var(--dark_grey);
-
-}
-
-input[type="range"] {
-  height: 33px;
-  border: 1px solid #fff;
-  background: var(--neon_green);
 }
