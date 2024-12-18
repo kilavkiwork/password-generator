@@ -177,6 +177,51 @@ button {
   fill: var(--neon_green);
 }
 /* end btn */
+/* hero */
+section.hero {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+}
+section.hero h2.title {
+  margin-bottom: 32px;
+  text-align: center;
+  color: var(--grey);
+}
+.tools-box {
+  padding: 24px 32px 32px;
+  background-color: var(--dark_grey);
+}
+/* password */
+.password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  width: 100%;
+  min-height: 80px;
+  padding: 19px 32px;
+  font-size: 2rem;
+  line-height: 1.315;
+  color: rgba(230, 229, 234, 0.25);
+  background-color: var(--dark_grey);
+  transition: color var(--anime);
+}
+.password:last-child {
+  margin-bottom: 0;
+}
+.icon-copy {
+  fill: var(--neon_green);
+  transition: fill var(--anime);
+}
+.password:hover {
+  color: rgba(230, 229, 234, 1);
+}
+.password:hover .icon-copy {
+  fill: var(--white)
+}
+/* end password */
 /* range */
 .password-size {
   display: flex;
@@ -236,14 +281,4 @@ input[type='range']:active::-webkit-slider-thumb {
   background-color: var(--black);
 }
 /* end range */
-
-section.hero {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  height: 100vh;
-}
-.tools-box {
-  padding: 24px 32px 32px;
-  background-color: var(--dark_grey);
-}
+/* end hero */
