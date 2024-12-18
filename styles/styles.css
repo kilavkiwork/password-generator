@@ -112,7 +112,6 @@ button {
   display: flex;
   align-items: center;
   column-gap: 24px;
-  border: 1px solid #fff;
 }
 .check_input input {
   display: none;
@@ -219,7 +218,7 @@ section.hero h2.title {
   color: rgba(230, 229, 234, 1);
 }
 .password:hover .icon-copy {
-  fill: var(--white)
+  fill: var(--white);
 }
 /* end password */
 /* range */
@@ -281,4 +280,15 @@ input[type='range']:active::-webkit-slider-thumb {
   background-color: var(--black);
 }
 /* end range */
+/* inputs check */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin-bottom: 32px;
+}
+.inputs:last-child {
+  margin-bottom: 0;
+}
+/* end inputs check */
 /* end hero */
