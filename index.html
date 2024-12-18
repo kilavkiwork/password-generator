@@ -101,7 +101,7 @@
     <div class="wrapper">
       <header class="header"></header>
       <main class="main">
-        <section >
+        <section class="hero">
           <div class="container">
             <h2 class="title">Password Generator</h2>
             <article class="password">
@@ -110,10 +110,13 @@
                 <use href="./assets/images/icons/icons.svg#icon-copy"></use>
               </svg>
             </article>
-            <article class="body">
+            <article class="tools-box">
               <div class="password-size">
+                <div class="password-size__header">
+                  <label for="slider">Character Length</label>
+                  <span #range-value>v10!</span>
+                </div>
                 <input type="range" name="range" id="range" min="6" max="32" value="6">
-                <span #range-value>value-10</span>
               </div>
               <div id="inputs" class="inputs">
                 <label class="check_input">
