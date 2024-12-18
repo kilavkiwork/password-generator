@@ -11,8 +11,8 @@
 
   --main_font: 'JetBrains Mono';
   --font-size: 1.125rem;
-  --padding: 20px;
-  --container: 1170px;
+  --padding: 1rem;
+  --container: 540px;
   --anime: 0.5s ease;
 }
 
@@ -42,6 +42,8 @@ body {
   font-style: normal;
   color: var(--white);
   background-color: var(--body-bg);
+  /*  */
+  border: 1px solid var(--red);
 }
 
 h1,
@@ -107,9 +109,10 @@ button {
 }
 /* inputs check */
 .check_input {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   column-gap: 24px;
+  border: 1px solid #fff;
 }
 .check_input input {
   display: none;
@@ -171,8 +174,14 @@ button {
   background-color: transparent;
 }
 .btn:hover .arrow {
-  fill: var(--neon_green)
+  fill: var(--neon_green);
 }
-
-
 /* end btn */
+.main > section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  /*  */
+  border: 1px solid var(--red);
+}

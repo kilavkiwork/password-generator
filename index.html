@@ -97,29 +97,57 @@
 
    -->
 
-  <!-- <label class="check_input">
-    <input type="checkbox" name="" id=""/>
-    <span class="checkmark"></span>
-    Checkbox Active
-  </label> -->
-
-  <!-- prettier-ignore -->
-  <!-- <button class="btn" type="submit">
-    button submit
-    <svg class="arrow" width="12" height="12">
-      <use href="./assets/images/icons/icons.svg#icon-arrow-right"></use>
-    </svg>
-  </button> -->
-
   <body>
     <div class="wrapper">
       <header class="header"></header>
       <main class="main">
-        <div class="container">
-          <h1 class="title">Lorem ipsum dolor</h1>
-          <br />
-          <br />
-        </div>
+        <section >
+          <div class="container">
+            <h2 class="title">Password Generator</h2>
+            <article class="password">
+              <span id="pass"></span>
+              <svg class="" width="" height="">
+                <use href="./assets/images/icons/icons.svg#icon-copy"></use>
+              </svg>
+            </article>
+            <article class="body">
+              <div class="password-size">
+                <input type="range" name="range" id="range" min="6" max="32" value="6">
+                <span #range-value>value-10</span>
+              </div>
+              <div id="inputs" class="inputs">
+                <label class="check_input">
+                  <input type="checkbox" name="uppercase" id="uppercase" />
+                  <span class="checkmark"></span>
+                  Include Uppercase Letters
+                </label>
+                <label class="check_input">
+                  <input type="checkbox" name="lowercase" id="lowercase" />
+                  <span class="checkmark"></span>
+                  Include Lowercase Letters
+                </label>
+                <label class="check_input">
+                  <input type="checkbox" name="numbers" id="numbers" />
+                  <span class="checkmark"></span>
+                  Include Numbers
+                </label>
+                <label class="check_input">
+                  <input type="checkbox" name="symbols" id="symbols" />
+                  <span class="checkmark"></span>
+                  Include Symbols
+                </label>
+              </div>
+              <div class=""></div>
+              <!-- prettier-ignore -->
+              <button class="btn" type="submit">
+                button submit
+                <svg class="arrow" width="12" height="12">
+                  <use href="./assets/images/icons/icons.svg#icon-arrow-right"></use>
+                </svg>
+              </button>
+            </article>
+          </div>
+        </section>
       </main>
       <footer class="footer"></footer>
     </div>
