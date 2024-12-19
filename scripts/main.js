@@ -13,7 +13,6 @@ function updateRange() {
   );
   
   rangeValue.textContent = value;
-  return value
 }
 
 updateRange();
@@ -73,7 +72,7 @@ button.addEventListener('click', () => {
     return;
   }
   let data = createData(selectedInputs);
-  let passLength = updateRange()
+  let passLength = range.value
   let pass = generatePassword(data, passLength);
   password.textContent = pass
 });
