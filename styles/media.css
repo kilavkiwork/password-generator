@@ -1,6 +1,29 @@
-@media (max-width: 1170px) {
+@media (max-width: 768px) {
+  :root {
+    --font-size: 1rem;
+  }
+  h2.title {
+    font-size: 1rem;
+  }
+  section.hero h2.title {
+    margin-bottom: 1rem;
+  }
+  .password {
+    margin-bottom: 1rem;
+    padding: 1em;
+  }
+  .password-size__header label {
+    font-size: 1rem;
+  }
+  .password-size__header span {
+    font-size: 1.5rem;
+  }
+  .tools-box {
+    padding: 1rem;
+  }
+  .check_input {
+    column-gap: 20px;
+  }
 }
 
-/* mobile first */
-@media (min-width: 768px) {
-}
+
