@@ -12,59 +12,69 @@ function updateRange() {
     `linear-gradient(to right, var(--neon_green) ${percent}%, var(--black) ${percent}%`
   );
   
-  rangeValue.textContent = value
+  rangeValue.textContent = value;
+  return value
 }
 
 updateRange();
 
-range.addEventListener('input', updateRange)
+range.addEventListener('input', updateRange);
 // end slider range code
-
-// check inputs
+// 
+// -----------
+// 
 const inputs = document.querySelector('.inputs');
 const arrInputs = inputs.querySelectorAll('input');
-console.log(arrInputs);
-
-const uppercase = {
-  start: 65,
-  length: 26,
-}
-const lowercase = {
-  start: 97,
-  length: 26,
-}
-
-const objs = [uppercase, lowercase]
-
-
-function checkInput() {
-  let checkInputs = []
-  arrInputs.forEach((input) => {
-    if(input.checked) {
-      checkInputs.push(input.name) 
-    }
-  })
-  return checkInputs
-  console.log(checkInputs);
-}
-// checkInput()
-// inputs.addEventListener('input', checkInput)
-
-function createMainArr() {
-  let a = checkInput()
-  console.log(a);
-  
-}
-
-function createSymbols(length, start) {
-  return Array.from({ length: length }, (_, i) => {
-    return String.fromCharCode(start + i);
-  });
-}
-
 const button = document.querySelector('button.btn');
-console.log(button);
+const password = document.querySelector('#pass')
+
+const chars = {
+  lowercase: 'abcdefghijklmnopqrstuvwxyz',
+  uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  numbers: '0123456789',
+  symbols: '!@#$%^&*()-_=+[]{};:,<.>/?',
+};
+
+// Збираємо вибрані інпути
+function checkInput() {
+  let checkInputs = [];
+  arrInputs.forEach((input) => {
+    if (input.checked) {
+      checkInputs.push(input.name);
+    }
+  });
+  return checkInputs;
+}
+
+// Робимо масив із усіма символами
+function createData(selectedInputs) {
+  let allData = [];
+  selectedInputs.forEach((name) => {
+    allData.push(...chars[name]);
+  });
+  return allData;
+}
+
+// Генеруємо пароль
+function generatePassword(data, length = 10) {
+  let pass = '';
+  for (let i = 0; i < length; i++) {
+    let randomIndex = Math.floor(Math.random() * data.length);
+    pass += data[randomIndex];
+  }
+  return pass;
+}
+
+// Обробка кліка по кнопці
 button.addEventListener('click', () => {
-  // checkInput()
-  createMainArr()
-})
+  let selectedInputs = checkInput();
+  if (selectedInputs.length === 0) {
+    alert('Оберіть хоча б один тип символів!');
+    return;
+  }
+  let data = createData(selectedInputs);
+  let passLength = updateRange()
+  let pass = generatePassword(data, passLength);
+  password.textContent = pass
+});
+
