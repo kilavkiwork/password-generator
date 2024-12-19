@@ -68,7 +68,7 @@ function generatePassword(data, length = 10) {
 button.addEventListener('click', () => {
   let selectedInputs = checkInput();
   if (selectedInputs.length === 0) {
-    alert('Оберіть хоча б один тип символів!');
+    alert('Choose at least one type of character!');
     return;
   }
   let data = createData(selectedInputs);
