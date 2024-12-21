@@ -309,13 +309,13 @@ input[type='range']:active::-webkit-slider-thumb {
   text-transform: uppercase;
   color: var(--grey);
 }
-.percents {
+.rate { 
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 8px;
 }
-.percent {
+.percentage {
   width: 10px;
   height: 28px;
   border: 2px solid var(--white);
