@@ -305,7 +305,7 @@ input[type='range']:active::-webkit-slider-thumb {
 .strength p:first-of-type {
   /* Body (M) */
   font-size: 1.125rem;
-  line-height: 1.33x;
+  line-height: 1.33;
   text-transform: uppercase;
   color: var(--grey);
 }
@@ -313,15 +313,23 @@ input[type='range']:active::-webkit-slider-thumb {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 8px;
+  /* column-gap: 8px; */
+
 }
+/* .rate:last-child {
+  margin-right: 0;
+} */
 .percentage {
   width: 10px;
   height: 28px;
   border: 2px solid var(--white);
+  margin-right: 0.5rem;
+}
+.percentage:last-child {
+  margin-right: 0;
 }
 #strength {
-  margin-right: 8px;
+  margin-right: 1rem;
   font-size: 24px;
   line-height: 32px;
   text-transform: uppercase;

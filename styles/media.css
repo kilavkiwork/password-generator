@@ -24,6 +24,16 @@
   .check_input {
     column-gap: 20px;
   }
+  .strength {
+    padding: 1rem;
+    margin-bottom: 1em;
+  }
+  .strength p:first-of-type {
+    font-size: 1rem;
+  }
+  #strength {
+    font-size: 1.125rem;
+  }
 }
 
 
