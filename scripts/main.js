@@ -10,9 +10,9 @@ const password = document.querySelector('#pass');
 // Об'єкт для зберігання повідомлень відповідно до сили
 const strengthMessages = {
   1: 'too weak!',
-  2: 'weak!',
+  2: 'weak',
   3: 'medium',
-  4: 'strong!',
+  4: 'strong',
 };
 
 // Об'єкт для зберігання символів
