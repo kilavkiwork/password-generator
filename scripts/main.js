@@ -55,7 +55,7 @@ function updateStrength(value) {
   } else if (value > 8 && value <= 10) {
     (color = 'var(--orange)'), (count = 2);
     output.textContent = strengthMessages[count];
-  } else if (value > 10 && value <= 16) {
+  } else if (value > 10 && value <= 12) {
     (color = 'var(--yellow)'), (count = 3);
     output.textContent = strengthMessages[count];
   } else {
