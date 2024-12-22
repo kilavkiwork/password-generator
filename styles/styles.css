@@ -338,6 +338,7 @@ input[type='range']:active::-webkit-slider-thumb {
   margin-right: 0;
 }
 /* end strength */
+/* copied message */
 #copyButton {
   display: flex;
   align-items: center;
@@ -355,4 +356,5 @@ input[type='range']:active::-webkit-slider-thumb {
   opacity: 1;
   visibility: visible;
 }
+/* end copied message */
 /* end hero */
