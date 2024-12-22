@@ -309,12 +309,11 @@ input[type='range']:active::-webkit-slider-thumb {
   text-transform: uppercase;
   color: var(--grey);
 }
-.rate { 
+.rate {
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* column-gap: 8px; */
-
 }
 /* .rate:last-child {
   margin-right: 0;
@@ -339,4 +338,21 @@ input[type='range']:active::-webkit-slider-thumb {
   margin-right: 0;
 }
 /* end strength */
+#copyButton {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+#copyMessage {
+  opacity: 0;
+  visibility: hidden;
+  font-size: 1.125rem;
+  line-height: 1.33;
+  color: var(--neon_green);
+  transition: opacity var(--anime), visibility var(--anime);
+}
+#copyMessage.visible {
+  opacity: 1;
+  visibility: visible;
+}
 /* end hero */

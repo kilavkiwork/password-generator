@@ -6,6 +6,7 @@ const inputs = document.querySelector('.inputs');
 const arrInputs = inputs.querySelectorAll('input');
 const button = document.querySelector('button.btn');
 const password = document.querySelector('#pass');
+const copyButton = document.querySelector('#copyButton');
 
 // Об'єкт для зберігання повідомлень відповідно до сили
 const strengthMessages = {
@@ -106,6 +107,23 @@ function generatePassword(data, length = 10) {
   return pass;
 }
 
+// Копіювання пароля в буфер обміну
+function copyToClipboard(text) {
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      // Показати повідомлення "Copied"
+      let copyMessage = document.querySelector('#copyMessage');
+      copyMessage.classList.add('visible');
+      setTimeout(() => {
+        copyMessage.classList.remove('visible');
+      }, 2000);
+    })
+    .catch((err) => {
+      console.error('Failed to copy: ', err);
+    });
+}
+
 // Обробка кліка по кнопці
 button.addEventListener('click', () => {
   let selectedInputs = checkInput();
@@ -114,7 +132,18 @@ button.addEventListener('click', () => {
     return;
   }
   let data = createData(selectedInputs);
-  let passLength = range.value;
+  let passLength = parseInt(range.value);
+
   let pass = generatePassword(data, passLength);
   password.textContent = pass;
+});
+
+// Обробка кліка по кнопці копіювання
+copyButton.addEventListener('click', () => {
+  let pass = password.textContent;
+  if (pass) {
+    copyToClipboard(pass);
+  } else {
+    alert('Generate a password first!');
+  }
 });
