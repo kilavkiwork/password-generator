@@ -78,14 +78,18 @@ range.addEventListener('input', updateRange);
 // end slider range code
 
 // Збираємо вибрані інпути
-function checkInput() {
-  let checkInputs = [];
-  arrInputs.forEach((input) => {
-    if (input.checked) {
-      checkInputs.push(input.name);
-    }
-  });
-  return checkInputs;
+function getCheckedInputs() {
+  return Array.from(arrInputs)
+    .filter((input) => input.checked)
+    .map((input) => input.name);
+
+  // let checkInputs = [];
+  // arrInputs.forEach((input) => {
+  //   if (input.checked) {
+  //     checkInputs.push(input.name);
+  //   }
+  // });
+  // return checkInputs;
 }
 
 // Робимо масив із усіма символами
@@ -126,7 +130,7 @@ function copyToClipboard(text) {
 
 // Обробка кліка по кнопці
 button.addEventListener('click', () => {
-  let selectedInputs = checkInput();
+  let selectedInputs = getCheckedInputs();
   if (selectedInputs.length === 0) {
     alert('Choose at least one type of character!');
     return;
