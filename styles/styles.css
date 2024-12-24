@@ -354,7 +354,9 @@ input[type='range']:active::-webkit-slider-thumb {
   transition: opacity var(--anime), visibility var(--anime);
 }
 #copyMessage.visible {
-  display: block;
+  position: relative;
+  z-index: 2;
+  display: inline;
   opacity: 1;
   visibility: visible;
 }
