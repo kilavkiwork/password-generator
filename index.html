@@ -6,41 +6,35 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+
     <!-- Підключення іконки сайту -->
     <link
       rel="icon"
       href="./assets/images/favicon/favicon.png"
       type="image/png"
     />
-    <!-- Підключення онлайн-шрифтів з Google Fonts -->
     <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap"
-      rel="stylesheet"
+      rel="icon"
+      href="./assets/images/favicon/favicon.svg"
+      type="image/svg+xml"
     />
 
     <title>Password Generator</title>
+
     <!-- Опис сторінки, автор -->
     <meta
+      name="author"
+      content="kilavki"
+    />
+    <meta
       name="description"
-      content="Короткий опис вашої сторінки."
+      content="Create secure and strong passwords effortlessly with our free online password generator. Customize the length and character set to generate unique passwords for your online accounts. Ensure your cybersecurity with a simple, fast, and reliable tool designed to protect your digital life."
     />
     <meta
       name="keywords"
-      content="ключове слово1, ключове слово2, ключове слово3"
+      content="password generator, random password generator, secure password creator, strong password tool, free password generator, online password maker, generate secure passwords, password creation tool, random secure passwords, password safety, cybersecurity tool, generate unique passwords, create strong passwords, safe password generator, customizable password generator, password generator for websites, strong password protection, online security tool, free online password generator, easy password creator"
     />
-    <meta
-      name="author"
-      content="Ваше ім'я"
-    />
+
     <!-- Підключення стилів -->
     <link
       rel="stylesheet"
@@ -58,44 +52,48 @@
       rel="stylesheet"
       href="./styles/media.css"
     />
+
     <!-- Підключення графіки для соц.мереж -->
+    <!-- Open Graph для Facebook -->
     <meta
       property="og:title"
-      content="Заголовок вашої сторінки"
+      content="Secure Password Generator"
     />
     <meta
       property="og:description"
-      content="Опис для Open Graph"
+      content="Create strong, secure passwords effortlessly with our free online tool."
     />
     <meta
       property="og:image"
-      content="URL до зображення"
+      content="https://kilavkiwork.github.io/password-generator/assets/images/password-generator-og.webp"
     />
     <meta
       property="og:url"
-      content="URL вашої сторінки"
+      content="https://kilavkiwork.github.io/password-generator/"
     />
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <!-- Twitter Cards -->
     <meta
       name="twitter:card"
       content="summary_large_image"
     />
     <meta
       name="twitter:title"
-      content="Заголовок для Twitter"
+      content="Secure Password Generator"
     />
     <meta
       name="twitter:description"
-      content="Опис для Twitter"
+      content="Create strong, secure passwords effortlessly with our free online tool."
     />
     <meta
       name="twitter:image"
-      content="URL до зображення"
+      content="https://kilavkiwork.github.io/password-generator/assets/images/password-generator-og.webp"
     />
   </head>
-
-  <!-- питання по макету // TODO * ! ?
-
-   -->
 
   <body>
     <div class="wrapper">
@@ -108,7 +106,11 @@
               <span id="pass">PTx1f5DaFX</span>
               <button id="copyButton">
                 <span id="copyMessage">Copied</span>
-                <svg class="icon-copy" width="21" height="24">
+                <svg
+                  class="icon-copy"
+                  width="21"
+                  height="24"
+                >
                   <use href="./assets/images/icons/icons.svg#icon-copy"></use>
                 </svg>
               </button>
@@ -120,27 +122,53 @@
                   <span id="range-value"></span>
                 </div>
                 <div class="range-wrap">
-                  <input type="range" name="range" id="range" min="6" max="20" value="10">
+                  <input
+                    type="range"
+                    name="range"
+                    id="range"
+                    min="6"
+                    max="20"
+                    value="10"
+                  />
                 </div>
               </div>
-              <div id="inputs" class="inputs">
+              <div
+                id="inputs"
+                class="inputs"
+              >
                 <label class="check_input">
-                  <input type="checkbox" name="uppercase" id="uppercase" />
+                  <input
+                    type="checkbox"
+                    name="uppercase"
+                    id="uppercase"
+                  />
                   <span class="checkmark"></span>
                   Include Uppercase Letters
                 </label>
                 <label class="check_input">
-                  <input type="checkbox" name="lowercase" id="lowercase" />
+                  <input
+                    type="checkbox"
+                    name="lowercase"
+                    id="lowercase"
+                  />
                   <span class="checkmark"></span>
                   Include Lowercase Letters
                 </label>
                 <label class="check_input">
-                  <input type="checkbox" name="numbers" id="numbers" />
+                  <input
+                    type="checkbox"
+                    name="numbers"
+                    id="numbers"
+                  />
                   <span class="checkmark"></span>
                   Include Numbers
                 </label>
                 <label class="check_input">
-                  <input type="checkbox" name="symbols" id="symbols" />
+                  <input
+                    type="checkbox"
+                    name="symbols"
+                    id="symbols"
+                  />
                   <span class="checkmark"></span>
                   Include Symbols
                 </label>
