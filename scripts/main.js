@@ -95,7 +95,7 @@ function getCheckedInputs() {
 // Робимо масив із усіма символами
 function makeCharacterPool(selectedInputs) {
   return selectedInputs.reduce((characterPool, selected) => {
-    return characterPool.concat(...chars[selected])
+    return characterPool.concat(...chars[selected]);
   }, []);
   // let allData = [];
   // selectedInputs.forEach((name) => {
@@ -106,14 +106,19 @@ function makeCharacterPool(selectedInputs) {
 console.log(makeCharacterPool(getCheckedInputs()));
 
 // Генеруємо пароль
-function generatePassword(data, length = 10) {
-  let pass = '';
-  for (let i = 0; i < length; i++) {
-    let randomIndex = Math.floor(Math.random() * data.length);
-    pass += data[randomIndex];
-  }
-  return pass;
+function generatePassword(characterPool, length) {
+  return Array.from({ length }).reduce((pass, _) => {
+    return pass + characterPool[Math.floor(Math.random() * characterPool.length)];
+  }, '');
 }
+  // let pass = '';
+  // for (let i = 0; i < length; i++) {
+  //   let randomIndex = Math.floor(Math.random() * data.length);
+  //   pass += data[randomIndex];
+  // }
+  // return pass;
+
+console.log(generatePassword());
 
 // Копіювання пароля в буфер обміну
 function copyToClipboard(text) {
@@ -144,8 +149,8 @@ button.addEventListener('click', () => {
 
   let characterPool = makeCharacterPool(selectedInputs);
   console.log(characterPool);
-  
-  let passLength = parseInt(range.value);
+
+  let passLength = parseInt(range.value, 10);
 
   let pass = generatePassword(characterPool, passLength);
   password.textContent = pass;
