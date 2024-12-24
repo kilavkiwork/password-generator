@@ -93,13 +93,17 @@ function getCheckedInputs() {
 }
 
 // Робимо масив із усіма символами
-function createData(selectedInputs) {
-  let allData = [];
-  selectedInputs.forEach((name) => {
-    allData.push(...chars[name]);
-  });
-  return allData;
+function makeCharacterPool(selectedInputs) {
+  return selectedInputs.reduce((characterPool, selected) => {
+    return characterPool.concat(...chars[selected])
+  }, []);
+  // let allData = [];
+  // selectedInputs.forEach((name) => {
+  //   allData.push(...chars[name]);
+  // });
+  // return allData;
 }
+console.log(makeCharacterPool(getCheckedInputs()));
 
 // Генеруємо пароль
 function generatePassword(data, length = 10) {
@@ -128,17 +132,22 @@ function copyToClipboard(text) {
     });
 }
 
-// Обробка кліка по кнопці
+// Обробка кліка по кнопці створення пароля
 button.addEventListener('click', () => {
   let selectedInputs = getCheckedInputs();
+  console.log(selectedInputs);
+
   if (selectedInputs.length === 0) {
     alert('Choose at least one type of character!');
     return;
   }
-  let data = createData(selectedInputs);
+
+  let characterPool = makeCharacterPool(selectedInputs);
+  console.log(characterPool);
+  
   let passLength = parseInt(range.value);
 
-  let pass = generatePassword(data, passLength);
+  let pass = generatePassword(characterPool, passLength);
   password.textContent = pass;
 });
 
