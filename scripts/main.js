@@ -108,30 +108,36 @@ console.log(makeCharacterPool(getCheckedInputs()));
 // Генеруємо пароль
 function generatePassword(characterPool, length) {
   return Array.from({ length }).reduce((pass, _) => {
-    return pass + characterPool[Math.floor(Math.random() * characterPool.length)];
+    return (
+      pass + characterPool[Math.floor(Math.random() * characterPool.length)]
+    );
   }, '');
 }
-  // let pass = '';
-  // for (let i = 0; i < length; i++) {
-  //   let randomIndex = Math.floor(Math.random() * data.length);
-  //   pass += data[randomIndex];
-  // }
-  // return pass;
+// let pass = '';
+// for (let i = 0; i < length; i++) {
+//   let randomIndex = Math.floor(Math.random() * data.length);
+//   pass += data[randomIndex];
+// }
+// return pass;
 
 console.log(generatePassword());
+
+// Показуємо повідомлення "Copied"
+function showCopiedMessage(params) {
+  let copyMessage = document.querySelector('#copyMessage');
+  copyMessage.classList.add('visible');
+  setTimeout(() => {
+    copyMessage.classList.remove('visible');
+  }, 2000);
+}
 
 // Копіювання пароля в буфер обміну
 function copyToClipboard(text) {
   navigator.clipboard
     .writeText(text)
-    .then(() => {
-      // Показати повідомлення "Copied"
-      let copyMessage = document.querySelector('#copyMessage');
-      copyMessage.classList.add('visible');
-      setTimeout(() => {
-        copyMessage.classList.remove('visible');
-      }, 2000);
-    })
+    .then(
+      showCopiedMessage()
+    )
     .catch((err) => {
       console.error('Failed to copy: ', err);
     });
