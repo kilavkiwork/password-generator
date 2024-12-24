@@ -24,10 +24,10 @@ const chars = {
   symbols: '!@#$%^&*()-_=+[]{};:,<.>/?',
 };
 
-// slider range code
+// Код що стосується range-slider
 function updateRange() {
   let value = range.value;
-  // розраховуємо відсотки для градієнту у слайдері
+  // розраховуємо відсотки для градієнту у range-slider
   let percent = ((value - range.min) / (range.max - range.min)) * 100;
 
   range.style.setProperty(
@@ -75,21 +75,14 @@ function updateStrength(value) {
 updateRange();
 
 range.addEventListener('input', updateRange);
-// end slider range code
+// END Код що стосується range-slider
 
-// Збираємо вибрані інпути
+// Код що стосується роботи з паролями
+// Збираємо обрані користувачем inputs
 function getCheckedInputs() {
   return Array.from(arrInputs)
     .filter((input) => input.checked)
     .map((input) => input.name);
-
-  // let checkInputs = [];
-  // arrInputs.forEach((input) => {
-  //   if (input.checked) {
-  //     checkInputs.push(input.name);
-  //   }
-  // });
-  // return checkInputs;
 }
 
 // Робимо масив із усіма символами
@@ -97,13 +90,7 @@ function makeCharacterPool(selectedInputs) {
   return selectedInputs.reduce((characterPool, selected) => {
     return characterPool.concat(...chars[selected]);
   }, []);
-  // let allData = [];
-  // selectedInputs.forEach((name) => {
-  //   allData.push(...chars[name]);
-  // });
-  // return allData;
 }
-console.log(makeCharacterPool(getCheckedInputs()));
 
 // Генеруємо пароль
 function generatePassword(characterPool, length) {
@@ -113,14 +100,6 @@ function generatePassword(characterPool, length) {
     );
   }, '');
 }
-// let pass = '';
-// for (let i = 0; i < length; i++) {
-//   let randomIndex = Math.floor(Math.random() * data.length);
-//   pass += data[randomIndex];
-// }
-// return pass;
-
-console.log(generatePassword());
 
 // Показуємо повідомлення "Copied"
 function showCopiedMessage(params) {
@@ -135,9 +114,7 @@ function showCopiedMessage(params) {
 function copyToClipboard(text) {
   navigator.clipboard
     .writeText(text)
-    .then(
-      showCopiedMessage()
-    )
+    .then(showCopiedMessage())
     .catch((err) => {
       console.error('Failed to copy: ', err);
     });
@@ -146,7 +123,6 @@ function copyToClipboard(text) {
 // Обробка кліка по кнопці створення пароля
 button.addEventListener('click', () => {
   let selectedInputs = getCheckedInputs();
-  console.log(selectedInputs);
 
   if (selectedInputs.length === 0) {
     alert('Choose at least one type of character!');
@@ -154,10 +130,7 @@ button.addEventListener('click', () => {
   }
 
   let characterPool = makeCharacterPool(selectedInputs);
-  console.log(characterPool);
-
   let passLength = parseInt(range.value, 10);
-
   let newPassword = generatePassword(characterPool, passLength);
   password.textContent = newPassword;
 });
@@ -171,3 +144,4 @@ copyButton.addEventListener('click', () => {
     alert('Generate a password first!');
   }
 });
+// END Код що стосується роботи з паролями
