@@ -36,4 +36,9 @@
   }
 }
 
-
+@media (max-height: 800px) {
+  section.hero {
+    margin-top: 2em;
+    align-items: start;
+  }
+}
