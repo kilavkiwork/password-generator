@@ -194,6 +194,7 @@ section.hero h2.title {
 }
 /* password */
 .password {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -354,9 +355,11 @@ input[type='range']:active::-webkit-slider-thumb {
   transition: opacity var(--anime), visibility var(--anime);
 }
 #copyMessage.visible {
-  position: relative;
+  position: absolute;
+  right: 0;
+  transform: translateX(-100%);
   z-index: 2;
-  display: inline;
+  display: block;
   opacity: 1;
   visibility: visible;
 }

@@ -34,6 +34,10 @@
   #strength {
     font-size: 1.125rem;
   }
+  #copyMessage.visible {
+    font-size: 1rem;
+    /* transform: translateX(-90%); */
+  }
 }
 
 @media (max-height: 800px) {
