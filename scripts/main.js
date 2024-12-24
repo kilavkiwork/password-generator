@@ -158,15 +158,15 @@ button.addEventListener('click', () => {
 
   let passLength = parseInt(range.value, 10);
 
-  let pass = generatePassword(characterPool, passLength);
-  password.textContent = pass;
+  let newPassword = generatePassword(characterPool, passLength);
+  password.textContent = newPassword;
 });
 
 // Обробка кліка по кнопці копіювання
 copyButton.addEventListener('click', () => {
-  let pass = password.textContent;
-  if (pass) {
-    copyToClipboard(pass);
+  let currentPassword = password.textContent.trim();
+  if (currentPassword) {
+    copyToClipboard(currentPassword);
   } else {
     alert('Generate a password first!');
   }
